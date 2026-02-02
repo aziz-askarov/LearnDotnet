@@ -1,0 +1,23 @@
+
+
+for (int i = 1; i < 10; i++)
+{
+    Console.WriteLine(i);
+}
+
+var soz = "";
+
+for (; soz.Length < 5;)
+{
+    soz += Console.ReadLine();
+}
+
+Console.WriteLine(soz);
+
+
+var shart = true;
+
+for (; shart;)
+{
+    Console.WriteLine(shart);
+}
