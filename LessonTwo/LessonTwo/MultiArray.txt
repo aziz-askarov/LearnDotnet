@@ -1,4 +1,4 @@
-﻿
+
 
 int[] arr1 = new int[] { 1, 2, 3 };
 int[] arr2 = new[] { 4, 6, 7 };
