@@ -1,0 +1,18 @@
+
+var shart = true;
+
+while (shart)
+{
+    Console.WriteLine(shart);
+    shart = Console.ReadLine() == "1";
+}
+
+
+do
+{
+    Console.WriteLine(shart);
+    shart = Console.ReadLine() == "1";
+}
+while (shart);
+
+
