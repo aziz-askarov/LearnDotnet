@@ -1,0 +1,33 @@
+﻿
+
+int[] arr1 = new int[] { 1, 2, 3 };
+int[] arr2 = new[] { 4, 6, 7 };
+int[] arr3 = {8,9, 10 };
+
+//var 
+var arr4 = new int[]{ 1, 2, 3 };
+
+int[][] arrs = {arr1 , arr2 , arr3 };
+
+arrs = new int[][]
+{
+    new int[] { 1, 2 },
+    new int[] { 1, 2 },
+    new int[] { 1, 2 },
+};
+
+
+int mahalla = 1;
+int mahalla2 = 2;
+int mahalla3 = 3;
+int mahalla4 = 4;
+
+int[] tuman1 = {mahalla, mahalla2 };
+int[] tuman2 = {mahalla3 };
+int[] tuman3 = {mahalla4 };
+
+int[][] viloyat1 = {tuman1, tuman2 };
+int[][] viloyat2 = {tuman3 };
+
+int[][][] davlat = {viloyat1, viloyat2 };
+
