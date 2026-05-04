@@ -1,0 +1,14 @@
+﻿
+@{
+
+    if (ViewBag.IsSuccess == true)
+    {
+        <h2>@ViewBag.Question.Question</h2>
+    }
+    else
+    {
+        <h2>Question not found</h2>
+        <h1>With id: @ViewBag.QuestionId</h1>
+    }
+}
+
