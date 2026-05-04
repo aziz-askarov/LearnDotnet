@@ -10,7 +10,7 @@ public class QuestionsController : Controller
     public QuestionsController()
     {
 
-        var path = Path.Combine("JsonData", "uzlotin.json");
+        var path = Path.Combine("JsonData", "uzkiril.json");
         var json = System.IO.File.ReadAllText(path);
 
         _questions = JsonConvert.DeserializeObject<List<QuestionModel>>(json);
@@ -23,7 +23,7 @@ public class QuestionsController : Controller
         return View();
     }
 
-    public IActionResult QuestionGetById(int id)
+    public IActionResult QuestionGetById(int id,int? choiceIndex = null)
     {
         var question = _questions?.FirstOrDefault(q => q.Id == id);
 
