@@ -23,7 +23,7 @@ public class QuestionsController : Controller
         return View();
     }
 
-    public IActionResult QuestionGetById(int id,int? choiceIndex = null)
+    public IActionResult QuestionGetById(int id, int? choiceIndex = null)
     {
         var question = _questions?.FirstOrDefault(q => q.Id == id);
 
@@ -37,8 +37,16 @@ public class QuestionsController : Controller
             ViewBag.IsSuccess = true;
             ViewBag.Question = question;
 
-            
-            
+            ViewBag.IsAnswer = choiceIndex != null;
+
+            if (choiceIndex != null)
+            {
+                var answer = question.Choices[choiceIndex.Value].Answer;
+
+                ViewBag.IsCorrectAnswer = answer;
+                ViewBag.ChoiceIndex = choiceIndex.Value;
+            }
+
         }
 
         return View();

@@ -11,24 +11,45 @@
             <img src="@imageLink" />
         }
 
-        <h1>@question.Id . @question.Question</h1>
+        <h3>@question.Id . @question.Question</h3>
 
         for (int i = 0; i < question.Choices.Count; i++)
         {
-            if (question.Choices[i].Answer)
+
+            if (ViewBag.IsAnswer == false)
             {
-                <a asp-controller="Questions" asp-action="QuestionGetById">
-                    <h3 style="color:greenyellow"> @(i + 1). @question.Choices[i].Text</h3>
+                <a asp-controller="Questions" asp-action="QuestionGetById" asp-route-id="@question.Id" asp-route-choiceIndex="@i">
+                    <h5> @(i + 1). @question.Choices[i].Text</h5>
                 </a>
             }
             else
             {
-                <a>
-                    <h3>@(i + 1). @question.Choices[i].Text</h3>
-                </a>
-            }
 
-            
+                var bgColor = string.Empty;
+
+                if (question.Choices[i].Answer)
+                {
+                    bgColor = "background-color: chartreuse";
+                }
+
+                if (i == ViewBag.ChoiceIndex)
+                {
+                    if (ViewBag.IsCorrectAnswer == false)
+                    {
+                        bgColor = "background-color: red";
+                    }
+                }
+                
+                <h5 style="@bgColor"> @(i + 1). @question.Choices[i].Text</h5>
+                
+            }
+        }
+
+        if (ViewBag.IsAnswer)
+        {
+            <a asp-controller="Questions" asp-action="QuestionGetById" asp-route-id="@(question.Id + 1)">
+                <h3>Next</h3>
+            </a>
         }
     }
     else
